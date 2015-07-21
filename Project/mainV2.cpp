@@ -1,7 +1,7 @@
 /* 
- * File:   main.cpp
+ * File:   mainV2.cpp
  * Author: Jourdan Joyner
- * Created on July 17, 2015, 3:43 PM
+ * Created on July 21, 2015, 2:05AM
  * Purpose: C++ Project
  */
 
@@ -23,23 +23,21 @@ struct tArea{//structure that holds the info for the main area
     string strNorth;//name of area to the north
     string strSouth;//name of area to the south
     string strEast;//name of area to the east
-    string strWest;//name of area to the west
-    
+    string strWest;//name of area to the west    
 };
 //global constants
 
 //function prototypes
 void DisplayArea(tArea &area);
-void GetAreaInfo(ifstream &fin,tArea &area);
+void GetAreaInfo(ifstream,tArea);
 void Move(ifstream &fin,tArea &area,string);
 int Input(ifstream &fin,tArea &area);
 //execution
 int main(){
     
-    ifstream fin;//pointer that opens and reads from file
+    ifstream fin(GAME_FILE);//pointer that opens and reads from file
     tArea area;//area structure data
     
-    fin.open(GAME_FILE);//
     
     if(fin.fail()){
         cout<<"UNABLE TO FIND GAME FILE\n";
@@ -90,8 +88,8 @@ void GetAreaInfo(ifstream &fin,tArea &area){
 
     fin.clear();//allows the file to be read through multiple times
     
-    while(getline(fin, strReadLine, '\n')){//while loop reads file til it finds the correct area heading
-
+    while(!fileIn.eof()){//while loop reads file til it finds the correct area heading
+        fin>>strReadLine;
         if(strReadLine==strArea){
  
             getline(fin,area.strDescription,'*');//if it finds the correct area heading, it reads its info  til it hits the *	
