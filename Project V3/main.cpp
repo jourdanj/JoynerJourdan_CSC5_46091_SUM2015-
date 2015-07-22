@@ -14,7 +14,6 @@ using namespace std;
 #define GAME_FILE "escape_the_house.txt"//read in for the world data
 #define CONTINUE    1
 #define QUIT            0
-
 //user libraries
 struct Area{//structure that holds the info for the main area
 
@@ -25,6 +24,7 @@ struct Area{//structure that holds the info for the main area
     string strSouth;//name of area to the east
     string strWest;//name of area to the west 
     string strView;//name of item to view
+    string strViewOut;//name of the item to view
 };
 //global constants
 
@@ -131,8 +131,10 @@ void Move(ifstream &fin,Area &area, string strArea){
 	GetAreaInfo(fin, area);	// Passes in the file pointer so the new area data is read	
 
 	DisplayArea(area);// Displays current area
+        
+        cout<<"The End.\n";
 	
-      //****  return QUIT;
+        return 1;
     }
     else{
         
@@ -174,6 +176,7 @@ int Input(ifstream &fin, Area &area){
     else if(strInput=="view"){
         cout<<"What would you like to view?\n";
         cin>>strInput;
+
     }
     else if(strInput=="north"){
         Move(fin,area,area.strNorth);//calls function to move north if possible

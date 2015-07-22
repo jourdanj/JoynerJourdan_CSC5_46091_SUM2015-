@@ -1,11 +1,44 @@
 <Start> Bedroom
 
 <Bedroom>
-You wake up in a bed that isn't yours. The lights are dim and 
+You are in a bedroom that isn't yours. The  bed is soft, the lights are dim and 
 you can hear the dull hum of a radio from somewhere else in the house.
-There is a door to your right, beside it resides a large bookcase.*
+There is a door to your right [east]. Beside it resides a large bookcase.*
 <north> None
-<east> None
-<south> Hallway
+<east> Hallway
+<south> None
 <west> None
-<bookcase> Bookcase
+
+<Hallway>
+The Hallway is long and narrow and the door to the bedroom [west]
+creaks loudly as it closes. The lights flicker eerily as 
+you move through it. There seems to be an opening and a door at the end of the hall,
+the opening going forward [north] and the door on the left [east]. The radio can
+be heard coming from the other side of the door*
+<north> LivingRoom
+<east> Locked
+<south> None
+<west> Bedroom
+
+<LivingRoom>
+The north Hallway [south] door opens and you enter the living room. It is spacious and has a very cozy
+feel to it. There are many comfortable sofas and expensive looking art hangs from the walls. 
+The only window is a skylight, shining in the warm rays of the sun. The front door stands on the wall to the right
+[east] and the entrance to the kitchen [west] is to the left*
+<north> None
+<east> Locked
+<south> Hallway
+<west> Kitchen
+
+<Kitchen>
+Moving through the living room, [east] You cautiously enter the empty kitchen. The cabinets are open 
+and empty, as though recently searched. The glass back door [west] has been boarded over.
+There is a fridge [north] siting upon the opposite wall, closed and unassuming.*
+<north> Fridge
+<east> LivingRoom
+<south> Locked
+<west> None
+
+<Fridge>
+The refridgerator hums with power. The inside of the fridge is empty, except for some condiments.
+On the outside of the fridge, there is a picture of a lighthouse overlooking a vast ocean.
