@@ -1,5 +1,5 @@
 /* 
- * File:   mainV3.cpp
+ * File:   mainV2.cpp
  * Author: Jourdan Joyner
  * Created on July 21, 2015, 2:37AM
  * Purpose: C++ Project
@@ -39,7 +39,6 @@ int main(){
 
     ifstream fin;//pointer that opens and reads from file
     Area area;//area structure data
-    string dump="";
     fin.open(GAME_FILE);
 
     if(fin.fail()){
@@ -143,17 +142,6 @@ void Move(ifstream &fin,Area &area, string strArea){
 	DisplayArea(area);// Displays current area
 	
     }
-}
-/**********************************************************/
-//*********************GetView*****************************/
-//************************Receives ************************/
-//****user input and reacts to it accordingly to **********/
-//*******look at an object in game in detail***************/
-/**********************************************************/
-void GetView(ifstream &fin, Area &area,string strInput){
-    
-    string vArea="<"+area.strCurrentArea+"|"+strInput+">";
-    
 }
 /**********************************************************/
 //*********************Input*******************************/
