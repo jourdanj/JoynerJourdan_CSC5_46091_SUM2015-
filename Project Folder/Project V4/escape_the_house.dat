@@ -26,7 +26,7 @@ There is a door to your right [east]. Beside it resides a large |bookcase|.*
 <Bedroom|bookcase>
 The bookcase reaches to the ceiling, with shelf upon shelf of books to enjoy. You notice a beaten up
 journal slightly hanging out. You open it up to discover a single line written within it.
-<#1 21,17,18,14,15,11,12,__.>*
+<1- 21,16,17,12,13,8,9,4,__.>*
 
 <Hallway>
 The Hallway is long and narrow and the door to the bedroom [west] creaks loudly as it closes. 
@@ -41,9 +41,9 @@ be heard coming from the other side of the door, and it seems that there is a no
 
 <Hallway|door>
 The note on the door is one line. It reads:
-"#4 What is the number that is one half of one quarter of one tenth of 400?*
+<4- What is the number that is one half of one quarter of one tenth of 400?>*
 
-<LivingRoom2>
+<LivingRoom>
 The Hallway [south] opens up into the living room. It is spacious and has a very cozy
 feel to it. There are many comfortable sofas around a large coffee table and expensive looking |art| hangs from the walls.
 The only window is a skylight, shining in the warm rays of the sun. The front door on the wall to the right [east] seems to have been hastily
@@ -54,38 +54,24 @@ boarded up. The entrance to the kitchen [west] is to the left.*
 <west> Kitchen
 <view> 1 art
 
-<LivingRoom>
-The north Hallway [south] door opens and you enter the living room. It is spacious and has a very cozy
-feel to it. There are many comfortable sofas around a large coffee table. The only window is a skylight,
-letting in the warm rays of the sun. The front door on the wall to the right [east] seems to have been hastily
-boarded up. The entrance to the kitchen [west] is to the left. The safe lies on the [north] wall as the |art|
-formerly covering it lays upon the ground*
-<north> Safe
-<east> Boarded
-<south> Hallway
-<west> Kitchen
-<view> 1 art
-
-<LivingRoom2|art>
-You go to straighten one of the more entrancing pieces of art but it falls to the ground. Hidden behind it 
-you find a safe.*
-
 <LivingRoom|art>
-You broke the artwork's frame when it fell. Hopefully it wasn't expensive...*
+The art in the room is pretty strange, the "painting" you are currently looking at seems to be a single
+black streak diagonally across a white canvas. Hopefully whoever owns the place didnt pay much.*
 
 <Kitchen>
 Moving through the living room, [east] You cautiously enter the empty kitchen. The |cabinets| are open 
-and empty, as though recently searched. The glass back door [west] has been boarded up as well.
+and empty, as though recently searched. The glass back door [west] has been boarded up as well. One the wall
+perpendicular to the blocked off glass is what appeas to be a garage door [south].
 There is a fridge [north] siting upon the opposite wall, closed and unassuming.*
 <north> Fridge
 <east> LivingRoom
-<south> None
+<south> Garage
 <west> Boarded
 <view> 1 cabinets
 
 <Kitchen|cabinets>
 You go through the cabinets, making sure there is nothing there to help you with your search. During your search you
-find a playing card. It is a 4 of spades, and written on the back in black sharpie is "#2". You leave the 
+find a playing card. It is an ace of spades, and written on the back in black sharpie is "#5". You leave the 
 card in the drawer, its not much use to you.*
 
 <Fridge>
@@ -100,9 +86,52 @@ On the outside of the fridge, there is a |picture| of a family of 4 at the beach
 <Fridge|picture>
 You take the picture from the fridge to get a better look at it. As you hold it in your hands you turn 
 it over to discover a riddle on the other side. It reads: 
-"#3 Four years ago, Jane was twice as old as Sam. Four years on from now,
-Sam will be 3/4 of Jane's age. How old is Jane now?" You, obviously having no time for riddles, put the 
+"<3- Four years ago, Jane was twice as old as Sam. Four years on from now,
+Sam will be 3/4 of Jane's age. How old is Jane now?>" You, obviously having no time for riddles, put the 
 picture back where you found it.*
+
+<Garage>
+You step into a 2 car garage, although currently no cars inhabit the building. there is a |washer| and dryer
+just to the right of the door and there seems to be a variety of objects in the shelves. The garage |doors| 
+are on the wall to the left, while the shelves line the wall directly ahead [north] of you. There is also a 
+garage door |button| just on the wall of the door you came in through.*
+<north> Shelves
+<east> None
+<south> Kitchen
+<west> None
+<view> 3 washer doors button
+
+<Garage|washer>
+The washer is empty, so is the dryer for that matter.*
+
+<Garage|doors>
+You try to lift the garage doors but they don't budge an inch.*
+
+<Garage|button>
+You try to open the garage door by hitting the button but nothing happens.*
+
+<Shelves>
+It looks like whoever lives here has been keeping a lot of random junk in storage out here. Without even 
+touching anything you can spot |books|, clothes, a |guitar|, and an old |ipad|. In between
+the shelving units [north] there also appears to be a wall safe.*
+<north> Safe
+<east> None
+<south> Garage
+<west> None
+<view> 3 books guitar ipad
+
+<Shelves|books>
+Theres a collection of old comptuer science text books for old languages. Who uses FORTRAN anymore??*
+
+<Shelves|guitar>
+You, being a natural on the guitar since birth, obviously decide to play a few quick riffs on the old guitar.
+After running through a perfect performance of Jimi Hendrix' Voodoo Child, you realize you should probably
+get back to the task at hand.*
+
+<Shelves|ipad>
+"What a strange place to keep an ipad," you think to yourself as you pick up the ipad from the shelf. You try to unlock
+it but the screen isnt prompting you to open it. Its actually not displaying anything a regular ipad would. you decide to
+hit it a few times. and the screen pops on. It displays these words:*
 
 <Office>
 Inside the office you hear the you see the walls lined with books and an impressive mahognony desk. 

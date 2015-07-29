@@ -1,5 +1,5 @@
 /* 
- * File:   mainV3.cpp
+ * File:   mainV4.cpp
  * Author: Jourdan Joyner
  * Created on July 21, 2015, 2:37AM
  * Purpose: C++ Project
@@ -13,7 +13,7 @@
 #include <ctime>
 using namespace std;
 
-#define GAME_FILE "escape_the_house.dat"//read in for the world data
+//#define GAME_FILE "escape_the_house.dat"//read in for the world data
 #define CONTINUE    1
 #define QUIT            0
 #define N_LOOKS     3
@@ -38,16 +38,16 @@ bool CheckView(Area &area, string);
 void GetView(ifstream &fin,Area &area,string);
 void DisplayView(Area &area);
 void Safe(Area &area);
-/*void InventorySearch(Area &area);
-void InventorySort(Area &area);
-void DisplayInventory(Area &area);*/
+void iPad_Puzzle();
 //execution
+clock_t t;
 int main(){
 
     ifstream fin;//pointer that opens and reads from file
+
     Area area;//area structure data
-    
-    fin.open(GAME_FILE);
+    char game_File[]="escape_the_house.dat";
+    fin.open(game_File);
 
     if(fin.fail()){
         cout<<"UNABLE TO FIND GAME FILE\n";
@@ -64,8 +64,9 @@ int main(){
 
 
        if(Input(fin,area)==QUIT){//if user enters quit, game ends
+           fin.close();
            break;
-           
+      
         }
     }
 
@@ -170,8 +171,7 @@ void Move(ifstream &fin,Area &area, string strArea){
 
 	GetAreaInfo(fin, area);	// Passes in the file pointer so the new area data is read	
 
-	DisplayArea(area);// Displays current area
-        
+	DisplayArea(area);// Displays current area   
     }
     else{
         
@@ -208,9 +208,12 @@ int Input(ifstream &fin, Area &area){
         if(CheckView(area,strInput)){
             GetView(fin,area,strInput);
             DisplayView(area);
+            if(strInput=="ipad"){
+                iPad_Puzzle();
+            }
         }
         else{
-            cout<<"There's nothing to inspect here.\n";
+            cout<<"Nothing matching that description around here.\n";
         }
     }
     else if(strInput=="north"){
@@ -310,7 +313,7 @@ void Safe(Area &area){
        }
         cin>>code[i];
     }
-    if(code[0]==8 && code[1]==4 && code[2]==8 && code[3]==5){//correct code received.
+    if(code[0]==5 && code[1]==1 && code[2]==8 && code[3]==5){//correct code received.
         cout<<"SUCCSESS! You have managed to open the vault!\n";
         cout<<"You retrieved the key from the safe.\n";
         area.strInventory="key";
@@ -325,28 +328,27 @@ void Safe(Area &area){
     
 }
 /**********************************************************/
-//*********************DisplayInventory********************/
-//*********************Outputs Inventory*******************/
+/*ipad_puzzle                                              *
+/Function is called to output a 2D array as a              *
+/ clue to the player                                       *
 /**********************************************************/
-/*void DisplayInventory(Area &area){
-    for(int i=0;i<COUNT;i++){
-        cout<<area.strInventory[i]<<endl;  
-    }
-}*/
-/**********************************************************/
-//*********************InventorySort*********************/
-//******Function is called to interact with the safe*******/
-/**********************************************************/
-/*void InventorySort(Area &area){
-            
-    int temp=-1,        
-        end=9;
+void iPad_Puzzle(){
     
-    int z=sizeof(Area.strInventory)/sizeof(Area.strInventory[0]); //Get the array size
-
-    sort(Area.strInventory,Area.strInventory+z); //Use the start and end like this
-
-    for(int y=0;y<z;y++){
-        cout << Area.strInventory[y] << endl;
+    const int FOUR=4;
+    const int COL=5;
+    int puzzle[COL][FOUR];
+    
+    for(int i=0;i<COL;i++){
+        for(int j=0;j<FOUR;j++){
+            puzzle[i][j]=(6-j)*(2+i)-2;
+        }
     }
-}*/
+    cout<<"<2- Whats the greatest common factor?>\n";
+    for(int i=0;i<COL;i++){
+        for(int j=0;j<FOUR;j++){
+            cout<<puzzle[i][j]<<'\t';
+        }
+        cout<<endl;
+    }
+    return;
+}
